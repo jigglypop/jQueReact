@@ -1,7 +1,3 @@
-아래는 **jQueReact**라는 이름의 **jQuery → React 트랜스파일러**를 소개하는 README.md 예시입니다. “컴파일러”가 아닌 **트랜스파일러**임을 명시하고, Rust+WASM 기반으로 동작한다는 점을 자세히 설명합니다. 필요에 따라 세부 내용을 추가/수정하여 실제 프로젝트에 적용하세요.
-
----
-
 # jQueReact
 
 **jQueReact**는 **jQuery 코드를 React 코드로 변환**하는 **트랜스파일러(Transpiler)**입니다.  
