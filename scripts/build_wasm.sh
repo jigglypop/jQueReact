@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 set -e
 
 echo "Building Rust -> WASM with wasm-pack..."

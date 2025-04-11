@@ -5,10 +5,12 @@
   "scripts": {
     "build:wasm": "bash ./scripts/build_wasm.sh",
     "build:ts": "tsc",
-    "build": "npm run build:wasm && npm run build:ts"
+    "build": "npm run build:wasm && npm run build:ts",
+    "serve": "npx http-server ." 
   },
   "devDependencies": {
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "http-server": "^14.1.1" 
   },
   "author": "jigglypop",
   "license": "MIT"

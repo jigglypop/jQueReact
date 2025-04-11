@@ -1,0 +1,14 @@
+body {
+  font-family: sans-serif;
+  margin: 1rem;
+}
+.container {
+  background-color: #f0f0f0;
+  padding: 1rem;
+}
+pre {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  color: #333;
+}
