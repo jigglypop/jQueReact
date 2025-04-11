@@ -1,0 +1,19 @@
+[package]
+name = "jquereact"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+# cdylib: WASM 빌드를 위해 필요
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+anyhow = "1.0"
+# SWC 등 필요한 라이브러리 추가 (예: swc_ecma_parser, swc_ecma_ast 등)
+# swc_ecma_parser = "0.139.0"
+# swc_ecma_ast = "0.139.0"
+# swc_ecma_codegen = "0.139.0"
+# swc_ecma_visit = "0.139.0"
+
+[dev-dependencies]

@@ -1,0 +1,15 @@
+{
+  "name": "jquereact",
+  "version": "0.0.1",
+  "description": "jQuery to React Transpiler (Pre-release placeholder)",
+  "scripts": {
+    "build:wasm": "bash ./scripts/build_wasm.sh",
+    "build:ts": "tsc",
+    "build": "npm run build:wasm && npm run build:ts"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  },
+  "author": "jigglypop",
+  "license": "MIT"
+}
