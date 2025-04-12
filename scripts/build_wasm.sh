@@ -9,10 +9,10 @@ if ! command -v wasm-pack &> /dev/null
 then
     cargo install wasm-pack
 fi
-# 3) wasm-pack 빌드 (bundler 타겟 사용)
+# 3) wasm-pack 빌드 (web 타겟 사용)
 wasm-pack build \
   --release \
-  --target bundler \
-  --out-dir ../pkg
+  --target web \
+  --out-dir ../public/pkg
 
 echo "Build complete. Output in pkg/ folder."

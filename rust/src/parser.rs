@@ -1,17 +1,16 @@
 use std::sync::Arc;
 
 use anyhow::{anyhow, Result};
-use swc_core::{common::{FileName, SourceMap, GLOBALS}, ecma::{ast::Module, parser::{lexer::Lexer, Parser, StringInput, Syntax}}};
+use swc_core::common::{FileName, SourceMap, GLOBALS};
+use swc_core::ecma::{ast::Module, parser::{lexer::Lexer, Parser, StringInput, Syntax}};
 
-pub fn parse(code: &str) -> Result<Module> {
+pub fn parse_js(code: &str) -> Result<Module> {
     // 글로벌 컨텍스트 설정
     GLOBALS.set(&Default::default(), || {
         // 소스맵 생성
         let cm = Arc::new(SourceMap::default());
-        
         // 소스 파일 생성
         let fm = cm.new_source_file(FileName::Anon.into(), code.into());
-        
         // Lexer 생성
         let lexer = Lexer::new(
             // ES2022 문법 사용
