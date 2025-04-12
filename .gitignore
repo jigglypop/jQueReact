@@ -7,25 +7,69 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-*.local
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+out/
+.output/
+pkg/
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cache and temp files
+.cache/
+.temp/
+coverage/
+.nyc_output/
+.eslintcache
+.stylelintcache
+.turbo
+.swc/
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+*~
+\#*\#
+.\#*
+.history/
 
-# IDE
+# Rust/WebAssembly specific
+target/
+Cargo.lock
+**/*.rs.bk
+wasm-pack.log
+
+# Yarn
 .yarn/*
-!.yarn/cache // Zero-Install 
+!.yarn/cache
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# OS specific
+Thumbs.db
+desktop.ini

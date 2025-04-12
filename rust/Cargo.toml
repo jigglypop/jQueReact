@@ -4,16 +4,27 @@ version = "0.1.0"
 edition = "2021"
 
 [lib]
-# cdylib: WASM 빌드를 위해 필요
 crate-type = ["cdylib"]
 
 [dependencies]
-wasm-bindgen = "0.2"
+wasm-bindgen = "0.2.83"
 anyhow = "1.0"
-# SWC 등 필요한 라이브러리 추가 (예: swc_ecma_parser, swc_ecma_ast 등)
-# swc_ecma_parser = "0.139.0"
-# swc_ecma_ast = "0.139.0"
-# swc_ecma_codegen = "0.139.0"
-# swc_ecma_visit = "0.139.0"
+js-sys = "0.3.60"
+web-sys = { version = "0.3.60", features = ["console"] }
+console_error_panic_hook = "0.1.7"
 
-[dev-dependencies]
+# swc_core를 사용하여 패키지 호환성 문제 해결
+swc_core = { version = "22.2.1", features = [
+  "ecma_parser",
+  "ecma_ast",
+  "ecma_codegen",
+  "ecma_visit",
+  "common",
+]}
+
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[profile.release]
+lto = true
+opt-level = 'z'
