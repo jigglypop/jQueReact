@@ -1,7 +1,7 @@
 {
   "name": "jquereact",
   "version": "0.0.1",
-  "description": "jQuery to React Transpiler (Pre-release placeholder)",
+  "description": "jQuery to React Transpiler",
   "scripts": {
     "build:wasm": "bash ./scripts/build_wasm.sh",
     "build:ts": "tsc",
