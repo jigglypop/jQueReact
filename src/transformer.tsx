@@ -104,7 +104,7 @@ export default ${componentName};
     console.error('jQuery JS 변환 오류:', error);
     return createEmptyComponent(
       componentName,
-      `// 변환 중 오류 발생: ${error.message}
+      `// 변환 중 오류 발생: ${error}
 // 원본 코드:
 /*
 ${content.slice(0, 300)}${content.length > 300 ? '...' : ''}
@@ -182,7 +182,7 @@ export default ${componentName};
 `;
   } catch (error) {
     console.error('HTML 변환 오류:', error);
-    return createEmptyComponent(componentName, `// HTML 변환 중 오류 발생: ${error.message}`);
+    return createEmptyComponent(componentName, `// HTML 변환 중 오류 발생: ${error}`);
   }
 }
 

@@ -1,5 +1,4 @@
-// src/wasm-interface.ts
-import init, { transpile as wasmTranspile } from '../public/pkg/jquereact.js';
+import init, { transpile as wasmTranspile } from '../public/pkg/jquereact';
 
 let initialized = false;
 
@@ -23,8 +22,8 @@ export function transpile(jqueryCode: string): string {
 
   try {
     return wasmTranspile(jqueryCode);
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('jQuery -> React 변환 중 오류:', error);
-    return `// 변환 오류: ${error.message}`;
+    return `// 변환 오류: ${error}`;
   }
 }
