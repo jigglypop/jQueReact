@@ -6,16 +6,29 @@
     "build:wasm": "bash ./scripts/build_wasm.sh",
     "build:ts": "tsc",
     "build": "npm run build:wasm && npm run build:ts",
+    "dev:wasm": "cd rust && cargo watch -s \"./scripts/build_wasm.sh\"",
+    "dev:concurrent": "concurrently \"npm run dev:wasm\" \"npm run serve\"",
+    "dev": "vite",
     "serve": "node server.js"
   },
+  "dependencies": {
+    "@types/react": "^19.1.1",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react-swc": "^3.8.1",
+    "express": "^5.1.0",
+    "prettier": "^3.5.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "http-server": "^14.1.1",
     "live-server": "^1.2.2",
-    "typescript": "^4.9.5"
+    "typescript": "^5.6.2",
+    "vite": "^5.4.4"
   },
   "author": "jigglypop",
   "license": "MIT",
-  "dependencies": {
-    "express": "^5.1.0"
-  }
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

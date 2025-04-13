@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -e
-echo "Building Rust -> WASM with wasm-pack..."
+echo "step1) Building Rust -> WASM with wasm-pack"
 cd rust
 # 1) Rust용 wasm32 타겟 준비
 rustup target add wasm32-unknown-unknown
@@ -15,4 +15,4 @@ wasm-pack build \
   --target web \
   --out-dir ../public/pkg
 
-echo "Build complete. Output in pkg/ folder."
+echo "Build Complete. Output in pkg/ folder."

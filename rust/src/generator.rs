@@ -1,29 +1,23 @@
-// src/generator.rs
 use crate::dom_node::JqDomNode;
 
 pub fn generate_react_code(node: &JqDomNode) -> String {
     let jsx = node_to_jsx(node);
     format!(
-r#"function MyComponent() {{
-  return (
-    {}
-  );
-}}"#,
-        jsx
-    )
+    r#"function MyComponent() {{
+        return (
+            {}
+        );
+    }}"#, jsx)
 }
 
 fn node_to_jsx(node: &JqDomNode) -> String {
     let (tag, classes) = parse_selector(&node.selector);
-
-    // merge classes + node.class_list
     let mut all_classes = classes;
     for c in &node.class_list {
         if !all_classes.contains(c) {
             all_classes.push(c.clone());
         }
     }
-
     // style
     let style_part = if !node.styles.is_empty() {
         let pairs: Vec<String> = node.styles.iter()

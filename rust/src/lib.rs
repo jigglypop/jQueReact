@@ -1,5 +1,3 @@
-// src/lib.rs
-
 use wasm_bindgen::prelude::*;
 
 mod parser;

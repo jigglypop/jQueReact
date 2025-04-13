@@ -9,11 +9,11 @@ crate-type = ["cdylib"]
 [dependencies]
 wasm-bindgen = "0.2.83"
 anyhow = "1.0"
+cargo-watch = "8.5.3"
 js-sys = "0.3.60"
 web-sys = { version = "0.3.60", features = ["console"] }
 console_error_panic_hook = "0.1.7"
 
-# swc_core를 사용하여 패키지 호환성 문제 해결
 swc_core = { version = "22.2.1", features = [
   "ecma_parser",
   "ecma_ast",
