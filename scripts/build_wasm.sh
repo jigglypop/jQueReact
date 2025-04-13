@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 echo "step1) Building Rust -> WASM with wasm-pack"
-cd rust
+cd core
 # 1) Rust용 wasm32 타겟 준비
 rustup target add wasm32-unknown-unknown
 # 2) wasm-pack 설치 (필요 시)
