@@ -3,11 +3,13 @@ use crate::dom_node::JqDomNode;
 pub fn generate_react_code(node: &JqDomNode) -> String {
     let jsx = node_to_jsx(node);
     format!(
-    r#"function MyComponent() {{
+        r#"function MyComponent() {{
         return (
             {}
         );
-    }}"#, jsx)
+    }}"#,
+        jsx
+    )
 }
 
 fn node_to_jsx(node: &JqDomNode) -> String {
@@ -20,8 +22,10 @@ fn node_to_jsx(node: &JqDomNode) -> String {
     }
     // style
     let style_part = if !node.styles.is_empty() {
-        let pairs: Vec<String> = node.styles.iter()
-            .map(|(k,v)| format!(r#"{}: "{}""#, k, v))
+        let pairs: Vec<String> = node
+            .styles
+            .iter()
+            .map(|(k, v)| format!(r#"{}: "{}""#, k, v))
             .collect();
         format!(r#" style={{ {{ {} }} }}"#, pairs.join(", "))
     } else {
@@ -56,11 +60,11 @@ fn node_to_jsx(node: &JqDomNode) -> String {
 
     format!(
         "<{tag}{cls}{style}{ev}>{inner}</{tag}>",
-        tag=tag,
-        cls=class_str,
-        style=style_part,
-        ev=event_str,
-        inner=inner
+        tag = tag,
+        cls = class_str,
+        style = style_part,
+        ev = event_str,
+        inner = inner
     )
 }
 
@@ -68,7 +72,7 @@ fn parse_selector(sel: &str) -> (String, Vec<String>) {
     // e.g. "div.container" -> ("div", ["container"])
     if let Some(dot) = sel.find('.') {
         let tag = &sel[..dot];
-        let cls = &sel[dot+1..];
+        let cls = &sel[dot + 1..];
         (tag.to_string(), vec![cls.to_string()])
     } else {
         (sel.to_string(), vec![])
